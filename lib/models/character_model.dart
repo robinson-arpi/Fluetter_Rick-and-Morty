@@ -97,7 +97,7 @@ class Character {
         id: json["id"],
         name: json["name"],
         status: statusValues.map[json["status"]]!,
-        species: speciesValues.map[json["species"]]!,
+        species: speciesValues.map[json["species"]],
         type: json["type"],
         gender: genderValues.map[json["gender"]]!,
         origin:

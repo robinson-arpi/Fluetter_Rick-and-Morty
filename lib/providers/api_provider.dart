@@ -6,8 +6,10 @@ class ApiProvider with ChangeNotifier {
   final url = 'rickandmortyapi.com';
   List<Character> characteres = [];
 
-  Future<void> getCharacteres() async {
-    final result = await http.get(Uri.https(url, "/api/character"));
+  Future<void> getCharacteres(int page) async {
+    final result = await http.get(Uri.https(url, "/api/character", {
+      'page': page.toString(),
+    }));
     final response = characterResponseFromJson(result.body);
     characteres.addAll(response.results!);
     notifyListeners();
