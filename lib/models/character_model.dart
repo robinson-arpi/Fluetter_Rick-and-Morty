@@ -99,7 +99,7 @@ class Character {
         status: statusValues.map[json["status"]]!,
         species: speciesValues.map[json["species"]],
         type: json["type"],
-        gender: genderValues.map[json["gender"]]!,
+        gender: genderValues.map[json["gender"]],
         origin:
             json["origin"] == null ? null : Location.fromJson(json["origin"]),
         location: json["location"] == null
